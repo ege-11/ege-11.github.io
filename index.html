@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="jQuery 3.3.1.js"></script>
+    <link rel='manifest' id='custom-manifest'>
+    <script src='sw.js'></script>
+<script src='script.js'></script>
+    <style>
+    button {
+    	font-size: 30px;
+    }
+    #ifr {
+    	display: none;
+    }
+    iframe {
+    	display: block;
+    	width: 100%;
+    	border: none;
+    }
+    </style>
+    <script>
+        $(document).ready(function(){
+        	$("iframe").height(1000);
+        	$("#math").click(function(){
+        		$("#start").hide();
+        		$("#ifr").show();
+        		$("iframe").hide();
+        		$("#m").show();
+        	});
+        	$("#phis").click(function(){
+        		$("#start").hide();
+        		$("#ifr").show();
+        		$("iframe").hide();
+        		$("#f").show();
+        	});
+        	$("#ret").click(function(){
+        		$("#start").show();
+        		$("#ifr").hide();
+        	});
+        });
+    </script>
+  </head>
+  <body>
+    <div id="start"><button id="math">математика</button><button id="phis">физика</button></div>
+    <div id="ifr">
+    <button id="ret">НАЗАД</button>
+    <iframe src="https://math-ege.sdamgia.ru/" id="m"></iframe>
+    <iframe src="https://phys-ege.sdamgia.ru/" id="f"></iframe>
+    </div>
+  </body>
+</html>
